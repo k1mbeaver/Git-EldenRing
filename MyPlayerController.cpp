@@ -17,7 +17,7 @@ void AMyPlayerController::OnPossess(APawn* aPawn)
 	if (aPawn)
 	{
 		myCharacter = Cast<APlayerCharacter>(aPawn);
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Success!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Success!"));
 		SetInputMode(FInputModeGameOnly());
 	}
 }

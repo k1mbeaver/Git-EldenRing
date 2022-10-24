@@ -45,7 +45,7 @@ void AMonsterProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 	//UEldenRingGameInstance* MyGI = GetGameInstance<UEldenRingGameInstance>();
 	//FString GunName = MyGI->GetPlayerGun();
 
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerHitSkill!")); // 몬스터의 스킬을 플레이어가 맞았나 안맞았나?
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerHitSkill!")); // 몬스터의 스킬을 플레이어가 맞았나 안맞았나?
 
 	//if (Cast<APlayerCharacter>(Hit.Actor)) // 맞은 대상이 몬스터일 때
 	if (Cast<APlayerCharacter>(OtherActor)) // 맞은 대상이 몬스터일 때
