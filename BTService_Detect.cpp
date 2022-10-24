@@ -69,10 +69,10 @@ void UBTService_Detect::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeM
 
                 OwnerComp.GetBlackboardComponent()->SetValueAsInt(AMonsterController::SkillTime, SkillTime);
                 OwnerComp.GetBlackboardComponent()->SetValueAsObject(AMonsterController::TargetKey, MyCharacter);
-                DrawDebugSphere(World, Center, DetectRadius, 16, FColor::Green, false, 0.2f);
+               // DrawDebugSphere(World, Center, DetectRadius, 16, FColor::Green, false, 0.2f);
 
-                DrawDebugPoint(World, MyCharacter->GetActorLocation(), 10.0f, FColor::Blue, false, 0.2f);
-                DrawDebugLine(World, ControllingPawn->GetActorLocation(), MyCharacter->GetActorLocation(), FColor::Blue, false, 0.2f);
+                //DrawDebugPoint(World, MyCharacter->GetActorLocation(), 10.0f, FColor::Blue, false, 0.2f);
+                //DrawDebugLine(World, ControllingPawn->GetActorLocation(), MyCharacter->GetActorLocation(), FColor::Blue, false, 0.2f);
                 return;
             }
 
@@ -83,6 +83,6 @@ void UBTService_Detect::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeM
         }
     }
 
-    DrawDebugSphere(World, Center, DetectRadius, 16, FColor::Red, false, 0.2f);
+    //DrawDebugSphere(World, Center, DetectRadius, 16, FColor::Red, false, 0.2f);
 }
 

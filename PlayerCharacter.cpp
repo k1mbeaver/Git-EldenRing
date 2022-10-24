@@ -345,7 +345,7 @@ void APlayerCharacter::AttackCheck()
 		ECollisionChannel::ECC_GameTraceChannel3, // Attack 채널 player의 경우에만 충돌 한다
 		FCollisionShape::MakeSphere(AttackRadius),
 		Params);
-
+/*
 #if ENABLE_DRAW_DEBUG
 	FVector TraceVec = GetActorForwardVector() * AttackRange;
 	FVector Center = GetActorLocation() + TraceVec * 0.5f;
@@ -367,13 +367,13 @@ void APlayerCharacter::AttackCheck()
 	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerPunch!")); // 플레이어가 펀치하는지 확인용
 
 #endif
-
+*/
 
 	if (bResult)
 	{
 		if (HitResult.Actor.IsValid())
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
+			//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
 			FDamageEvent DamageEvent;
 			AMonsterCharacter* HitCharacter = Cast<AMonsterCharacter>(HitResult.Actor);
 			HitCharacter->TakeDamage(AttackPower, DamageEvent, GetController(), this);
@@ -423,6 +423,7 @@ void APlayerCharacter::SkillCheck()
 		FCollisionShape::MakeSphere(SkillRange),
 		Params);
 
+	/*
 #if ENABLE_DRAW_DEBUG
 	FVector TraceVec = GetActorForwardVector() * SkillRange;
 	FVector Center = GetActorLocation() + TraceVec * 0.5f;
@@ -444,13 +445,13 @@ void APlayerCharacter::SkillCheck()
 	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerSkill!")); // 플레이어가 펀치하는지 확인용
 
 #endif
-
+*/
 
 	if (bResult)
 	{
 		if (HitResult.Actor.IsValid())
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
+			//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
 			FDamageEvent DamageEvent;
 			AMonsterCharacter* HitCharacter = Cast<AMonsterCharacter>(HitResult.Actor);
 			HitCharacter->TakeDamage(SkillPower, DamageEvent, GetController(), this);
@@ -749,7 +750,7 @@ float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damag
 	PlayerAnim->PlayStunMontage(StunMontage); // 기절 애니메이션 출력
 
 	fPlayerHp -= FinalDamage;
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Attack!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Attack!"));
 
 	APlayerUI_HUD* HUD = Cast<APlayerUI_HUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
 

@@ -97,7 +97,7 @@ void UInventory_UW::SetInitDescript(UObject* ItemData)
 
 	SetDescript(MyGI->GetItemDescript(myItemData->GetItemName()));
 
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("ItemClick!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("ItemClick!"));
 }
 
 void UInventory_UW::SetPopup(bool IsHovered)

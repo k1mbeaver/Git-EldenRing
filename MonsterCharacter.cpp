@@ -177,7 +177,7 @@ void AMonsterCharacter::AttackCheck()
 		ECollisionChannel::ECC_GameTraceChannel2, // Attack 채널 player의 경우에만 충돌 한다
 		FCollisionShape::MakeSphere(AttackRadius),
 		Params);
-
+/*
 #if ENABLE_DRAW_DEBUG
 		FVector TraceVec = GetActorForwardVector() * AttackRange;
 		FVector Center = GetActorLocation() + TraceVec * 0.5f;
@@ -196,16 +196,16 @@ void AMonsterCharacter::AttackCheck()
 			false,
 			DebugLifeTime);
 		
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerPunch!")); // 플레이어가 펀치하는지 확인용
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerPunch!")); // 플레이어가 펀치하는지 확인용
 
 #endif
-
+*/
 
 	if (bResult)
 	{
 		if (HitResult.Actor.IsValid())
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
+			//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
 			FDamageEvent DamageEvent;
 			AttackParticleStart(HitResult.ImpactPoint); // 몬스터 공격 파티클 출력하기
 			APlayerCharacter* HitCharacter = Cast<APlayerCharacter>(HitResult.Actor);
@@ -219,7 +219,7 @@ float AMonsterCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Dama
 	float FinalDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 
 	fAIHp -= FinalDamage;
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Attack!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Attack!"));
 
 	APlayerUI_HUD* HUD = Cast<APlayerUI_HUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
 
@@ -300,6 +300,7 @@ void AMonsterCharacter::SkillCheck()
 			FCollisionShape::MakeSphere(SkillRange),
 			Params);
 
+		/*
 #if ENABLE_DRAW_DEBUG
 		FVector TraceVec = GetActorForwardVector() * SkillRange;
 		FVector Center = GetActorLocation() + TraceVec * 0.5f;
@@ -309,25 +310,25 @@ void AMonsterCharacter::SkillCheck()
 		float DebugLifeTime = 5.0f;
 
 		// 이거는 에디터에서만 사용하는거		
-		DrawDebugCapsule(GetWorld(),
-			Center,
-			HalfHeight,
-			SkillRadius,
-			CapsuleRot,
-			DrawColor,
-			false,
-			DebugLifeTime);
+		//DrawDebugCapsule(GetWorld(),
+		//	Center,
+		//	HalfHeight,
+		//	SkillRadius,
+		//	CapsuleRot,
+		//	DrawColor,
+		//	false,
+		//	DebugLifeTime);
 
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("MonsterSkill!")); // 플레이어가 펀치하는지 확인용
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("MonsterSkill!")); // 플레이어가 펀치하는지 확인용
 
 #endif
-
+*/
 
 		if (bResult)
 		{
 			if (HitResult.Actor.IsValid())
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
+				//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
 				FDamageEvent DamageEvent;
 				APlayerCharacter* HitCharacter = Cast<APlayerCharacter>(HitResult.Actor);
 				HitCharacter->TakeDamage(SkillPower, DamageEvent, GetController(), this);
@@ -349,6 +350,7 @@ void AMonsterCharacter::SkillCheck()
 			FCollisionShape::MakeSphere(SkillRange),
 			Params);
 
+		/*
 #if ENABLE_DRAW_DEBUG
 		FVector TraceVec = GetActorForwardVector() * SkillRange;
 		FVector Center = GetActorLocation() + TraceVec * 0.5f;
@@ -370,13 +372,13 @@ void AMonsterCharacter::SkillCheck()
 		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("MonsterSkill!")); // 플레이어가 펀치하는지 확인용
 
 #endif
-
+*/
 
 		if (bResult)
 		{
 			if (HitResult.Actor.IsValid())
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
+				//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
 				FDamageEvent DamageEvent;
 				APlayerCharacter* HitCharacter = Cast<APlayerCharacter>(HitResult.Actor);
 				HitCharacter->TakeDamage(SkillPower, DamageEvent, GetController(), this);
