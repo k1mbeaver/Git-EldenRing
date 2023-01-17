@@ -1,3 +1,4 @@
 # Git-EldenRing
 
-Play 영상 : https://youtu.be/BtEsg-nkpCE
+A survival open world game created using Unreal Engine 4.27
+Play : https://youtu.be/BtEsg-nkpCE
